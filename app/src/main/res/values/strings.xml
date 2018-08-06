@@ -3,17 +3,17 @@
     <string name="app_name">JavaTest</string>
 
     <!-- Home -->
-    <string name="test_description">Take a Java test consisting of 20 questions
-        that cover a variety of Java SE fundamentals.</string>
+    <string name="test_description">Take a Java test consisting of 20 questions <!--
+     -->that cover a variety of Java SE fundamentals.</string>
     <string name="start_test">Start Test</string>
 
     <!-- Questions -->
 
     <!-- Question 1 -->
     <string name="question_1_code_snippet">
-        int numerator = 5;\n
-        int denominator = 0;\n
-        int quotient = denominator != 0 ? numerator / denominator : -1;
+        int numerator = 5;\n<!--
+     -->int denominator = 0;\n<!--
+     -->int quotient = denominator != 0 ? numerator / denominator : -1;
     </string>
     <string name="question_1_description">The above statements throw an ArithmeticException.</string>
 
@@ -22,19 +22,19 @@
 
     <!-- Question 2 -->
     <string name="question_2_code_snippet">
-        int x = 0;\n\n
+        int x = 0;\n\n<!--
 
-        int y = 0;\n\n
+     -->int y = 0;\n\n<!--
 
-        y++;\n\n
+     -->y++;\n\n<!--
 
-        ++x;\n\n
+     -->++x;\n\n<!--
 
-        x = x + (++y);\n\n
+     -->x = x + (++y);\n\n<!--
 
-        y = y - (x++);
+     -->y = y - (x++);
     </string>
-    <string name="question_2_description">What values contained within x and y?</string>
+    <string name="question_2_description">What values are contained in x and y?</string>
 
     <string name="question_2_answer_1">x = 4, y = -1</string>
     <string name="question_2_answer_2">x = 3, y = 0</string>
@@ -43,17 +43,17 @@
 
     <!-- Question 3 -->
     <string name="question_3_code_snippet">
-        int x = 1;\n\n
+        int x = 1;\n\n<!--
 
-        x *= 10;\n\n
+     -->x *= 10;\n\n<!--
 
-        x /= 3;\n\n
+     -->x /= 3;\n\n<!--
 
-        x *= 2;\n\n
+     -->x *= 2;\n\n<!--
 
-        x %= 2;\n\n
+     -->x %= 2;\n\n<!--
 
-        x -= 4;
+     -->x -= 4;
     </string>
     <string name="question_3_description">What value is contained in x?</string>
 
@@ -64,11 +64,11 @@
 
     <!-- Question 4 -->
     <string name="question_4_code_snippet">
-        int x = 1;\n\n
+        int x = 1;\n\n<!--
 
-        int y = 2;\n\n
+     -->int y = 2;\n\n<!--
 
-        System.out.print("_" + x + y + "_");
+     -->System.out.print(\"_\" + x + y + \"_\");
     </string>
     <string name="question_4_description">What does the console display when the following statements are ran?</string>
 
@@ -79,19 +79,19 @@
 
     <!-- Question 5 -->
     <string name="question_5_code_snippet">
-        boolean[] array = new boolean[3];\n\n
+        boolean[] array = new boolean[3];\n\n<!--
 
-        array[1] = true;\n\n
+     -->array[0] = true;\n\n<!--
 
-        array[2] = false;\n\n
+     -->array[1] = false;\n\n<!--
 
-        System.out.println(array[3]);
+     -->System.out.println(array[2]);
     </string>
     <string name="question_5_description">What does the console display when the following statements are ran?</string>
 
     <string name="question_5_answer_1">true</string>
     <string name="question_5_answer_2">false</string>
-    <string name="question_5_answer_3">array[3]</string>
+    <string name="question_5_answer_3">array[2]</string>
     <string name="question_5_answer_4">null</string>
 
 </resources>
