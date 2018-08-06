@@ -28,6 +28,8 @@ public class TestActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
+        updateActionBarTitle(0);
+
         questionVp = findViewById(R.id.question_vp);
 
         test = TestUtils.createTest(this);
@@ -45,11 +47,33 @@ public class TestActivity extends AppCompatActivity
                 return test.getQuestionCount();
             }
         });
+
+        questionVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                updateActionBarTitle(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     @Override
     public void onQuestionAnswered(Question question, Answer answer) {
         test.answerQuestion(question, answer);
         Log.i(TAG, "Current test grade: " + TestUtils.gradeTest(test));
+    }
+
+    private void updateActionBarTitle(int questionNumber) {
+        String title = getString(R.string.question_number, questionNumber + 1); // Compensate positions starting at 0 by adding 1
+        setTitle(title);
     }
 }
