@@ -1,5 +1,6 @@
 package com.juanromodev.javatest.data.model;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -16,6 +17,12 @@ public class Question implements Parcelable {
         this.codeSnippet = codeSnippet;
         this.description = description;
         this.answers = answers;
+    }
+
+    public Question(Context context, int codeSnippetResId, int descriptionResId, Answer... answers) {
+        this(context.getString(codeSnippetResId),
+             context.getString(descriptionResId),
+             answers);
     }
 
     public String getCodeSnippet() {

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Questions -->
+
+    <!-- Question 1 -->
+    <bool name="question_1_answer_1">false</bool>
+    <bool name="question_1_answer_2">true</bool>
+
+    <!-- Question 2 -->
+    <bool name="question_2_answer_1">true</bool>
+    <bool name="question_2_answer_2">false</bool>
+    <bool name="question_2_answer_3">false</bool>
+    <bool name="question_2_answer_4">false</bool>
+
+    <!-- Question 3 -->
+    <bool name="question_3_answer_1">false</bool>
+    <bool name="question_3_answer_2">true</bool>
+    <bool name="question_3_answer_3">false</bool>
+    <bool name="question_3_answer_4">false</bool>
+
+    <!-- Question 4 -->
+    <bool name="question_4_answer_1">false</bool>
+    <bool name="question_4_answer_2">false</bool>
+    <bool name="question_4_answer_3">false</bool>
+    <bool name="question_4_answer_4">true</bool>
+
+    <!-- Question 5 -->
+    <bool name="question_5_answer_1">false</bool>
+    <bool name="question_5_answer_2">true</bool>
+    <bool name="question_5_answer_3">false</bool>
+    <bool name="question_5_answer_4">false</bool>
+
+</resources>

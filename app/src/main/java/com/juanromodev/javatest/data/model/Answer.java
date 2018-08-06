@@ -1,5 +1,6 @@
 package com.juanromodev.javatest.data.model;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -13,6 +14,11 @@ public class Answer implements Parcelable {
     public Answer(String text, boolean correct) {
         this.text = text;
         this.correct = correct;
+    }
+
+    public Answer(Context context, int textResId, int correctResId) {
+        this(context.getString(textResId),
+             context.getResources().getBoolean(correctResId));
     }
 
     public String getText() {
