@@ -1,5 +1,6 @@
 package com.juanromodev.javatest.data.model;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,16 +26,7 @@ public class Test {
         answerToQuestion.put(question, answer);
     }
 
-    public int getGrade() {
-        int correctAnswers = 0;
-        for (Answer answer : answerToQuestion.values()) {
-            if (answer != null && answer.isCorrect()) {
-                correctAnswers++;
-            }
-        }
-
-        float grade = (float) correctAnswers / questionList.size() * 100;
-
-        return Math.round(grade);
+    public Collection<Answer> getAnswers() {
+        return answerToQuestion.values();
     }
 }

@@ -1,12 +1,13 @@
 package com.juanromodev.javatest.ui.home;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.juanromodev.javatest.R;
+import com.juanromodev.javatest.ui.test.TestActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -21,8 +22,8 @@ public class HomeActivity extends AppCompatActivity {
         startTestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(HomeActivity.this, R.string.test_started, Toast.LENGTH_SHORT)
-                        .show();
+                Intent i = new Intent(HomeActivity.this, TestActivity.class);
+                startActivity(i);
             }
         });
     }
