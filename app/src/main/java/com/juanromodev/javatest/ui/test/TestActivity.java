@@ -19,6 +19,8 @@ public class TestActivity extends AppCompatActivity
 
     private static final String TAG = "TestActivity";
 
+    private static final String SAVED_TEST = "test";
+
     private ViewPager questionVp;
 
     private Test test;
@@ -28,11 +30,15 @@ public class TestActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        updateActionBarTitle(0);
+        updateActionBarTitle(1);
 
         questionVp = findViewById(R.id.question_vp);
 
-        test = TestUtils.createTest(this);
+        if (savedInstanceState != null) {
+            test = savedInstanceState.getParcelable(SAVED_TEST);
+        } else {
+            test = TestUtils.createTest(this);
+        }
 
         FragmentManager fm = getSupportFragmentManager();
         questionVp.setAdapter(new FragmentStatePagerAdapter(fm) {
@@ -56,7 +62,7 @@ public class TestActivity extends AppCompatActivity
 
             @Override
             public void onPageSelected(int position) {
-                updateActionBarTitle(position);
+                updateActionBarTitle(position + 1);
             }
 
             @Override
@@ -67,13 +73,19 @@ public class TestActivity extends AppCompatActivity
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(SAVED_TEST, test);
+    }
+
+    @Override
     public void onQuestionAnswered(Question question, Answer answer) {
         test.answerQuestion(question, answer);
         Log.i(TAG, "Current test grade: " + TestUtils.gradeTest(test));
     }
 
     private void updateActionBarTitle(int questionNumber) {
-        String title = getString(R.string.question_number, questionNumber + 1); // Compensate positions starting at 0 by adding 1
+        String title = getString(R.string.question_number, questionNumber);
         setTitle(title);
     }
 }
