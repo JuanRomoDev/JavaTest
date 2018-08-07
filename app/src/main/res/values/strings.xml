@@ -9,6 +9,14 @@
 
     <!-- Test -->
     <string name="question_number">Question %1$d</string>
+    <string name="submit">Submit</string>
+
+    <!-- Grade Report -->
+    <string name="grade_report">Grade Report</string>
+    <string name="correct_questions">Correct Questions: %1$d</string>
+    <string name="incorrect_questions">Incorrect Questions: %1$d</string>
+    <string name="total_questions">Total Questions: %1$d</string>
+    <string name="grade">Grade: %1$d</string>
 
     <!-- Questions -->
 

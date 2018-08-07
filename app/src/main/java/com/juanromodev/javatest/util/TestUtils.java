@@ -13,7 +13,7 @@ public class TestUtils {
         return new Test(questionBank.getQuestionList());
     }
 
-    public static int gradeTest(Test test) {
+    public static int getCorrectAnswersCount(Test test) {
         int correctAnswers = 0;
 
         for (Answer answer : test.getAnswers()) {
@@ -22,9 +22,14 @@ public class TestUtils {
             }
         }
 
+        return correctAnswers;
+    }
+
+    public static int gradeTest(Test test) {
+        int correctAnswers = getCorrectAnswersCount(test);
+
         float grade = (float) correctAnswers / test.getQuestionCount() * 100;
 
         return Math.round(grade);
     }
-
 }

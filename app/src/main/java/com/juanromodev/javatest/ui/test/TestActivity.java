@@ -1,23 +1,25 @@
 package com.juanromodev.javatest.ui.test;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.juanromodev.javatest.R;
 import com.juanromodev.javatest.data.model.Answer;
 import com.juanromodev.javatest.data.model.Question;
 import com.juanromodev.javatest.data.model.Test;
+import com.juanromodev.javatest.ui.grade_report.GradeReportActivity;
 import com.juanromodev.javatest.util.TestUtils;
 
 public class TestActivity extends AppCompatActivity
         implements QuestionFragment.Callbacks {
-
-    private static final String TAG = "TestActivity";
 
     private static final String SAVED_TEST = "test";
 
@@ -73,6 +75,25 @@ public class TestActivity extends AppCompatActivity
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_test, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.submit:
+                Intent i = GradeReportActivity.newIntent(this, test);
+                startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putParcelable(SAVED_TEST, test);
@@ -81,7 +102,6 @@ public class TestActivity extends AppCompatActivity
     @Override
     public void onQuestionAnswered(Question question, Answer answer) {
         test.answerQuestion(question, answer);
-        Log.i(TAG, "Current test grade: " + TestUtils.gradeTest(test));
     }
 
     private void updateActionBarTitle(int questionNumber) {
