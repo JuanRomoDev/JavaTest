@@ -1,6 +1,6 @@
 <resources>
     <!-- Global -->
-    <string name="app_name">JavaTest</string>
+    <string name="app_name">Java Test</string>
 
     <!-- Home -->
     <string name="test_description">Take a Java test consisting of 20 questions <!--
