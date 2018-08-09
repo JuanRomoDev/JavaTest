@@ -15,12 +15,13 @@ import android.widget.TextView;
 import com.juanromodev.javatest.R;
 import com.juanromodev.javatest.data.model.Answer;
 import com.juanromodev.javatest.data.model.Question;
+import com.juanromodev.javatest.util.TextUtils;
 
 public class QuestionFragment extends Fragment {
 
     private static final String ARG_QUESTION = "question";
 
-    private static final String SAVED_ANSWER = "answer";
+    private static final String SAVED_SELECTED_ANSWER = "selected_answer";
 
     private Callbacks callbacks;
 
@@ -56,7 +57,6 @@ public class QuestionFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         question = getArguments().getParcelable(ARG_QUESTION);
     }
 
@@ -67,13 +67,14 @@ public class QuestionFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_question, container, false);
 
         questionCodeSnippetTv = v.findViewById(R.id.question_code_snippet_tv);
-        questionCodeSnippetTv.setText(question.getCodeSnippet());
+        String codeSnippet = TextUtils.addNumberLines(question.getCodeSnippet());
+        questionCodeSnippetTv.setText(codeSnippet);
 
         questionDescriptionTv = v.findViewById(R.id.question_description_tv);
         questionDescriptionTv.setText(question.getDescription());
 
         if (savedInstanceState != null) {
-            selectedAnswer = savedInstanceState.getParcelable(SAVED_ANSWER);
+            selectedAnswer = savedInstanceState.getParcelable(SAVED_SELECTED_ANSWER);
         }
 
         questionAnswersRg = v.findViewById(R.id.question_answers_rg);
@@ -103,6 +104,6 @@ public class QuestionFragment extends Fragment {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelable(SAVED_ANSWER, selectedAnswer);
+        outState.putParcelable(SAVED_SELECTED_ANSWER, selectedAnswer);
     }
 }
