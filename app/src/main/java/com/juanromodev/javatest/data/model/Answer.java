@@ -11,14 +11,9 @@ public class Answer implements Parcelable {
     private String text;
     private boolean correct;
 
-    public Answer(String text, boolean correct) {
-        this.text = text;
-        this.correct = correct;
-    }
-
     public Answer(Context context, int textResId, int correctResId) {
-        this(context.getString(textResId),
-             context.getResources().getBoolean(correctResId));
+        text = context.getString(textResId);
+        correct = context.getResources().getBoolean(correctResId);
     }
 
     public String getText() {

@@ -13,16 +13,10 @@ public class Question implements Parcelable {
     private String description;
     private Answer[] answers;
 
-    public Question(String codeSnippet, String description, Answer... answers) {
-        this.codeSnippet = codeSnippet;
-        this.description = description;
-        this.answers = answers;
-    }
-
     public Question(Context context, int codeSnippetResId, int descriptionResId, Answer... answers) {
-        this(context.getString(codeSnippetResId),
-             context.getString(descriptionResId),
-             answers);
+        codeSnippet = context.getString(codeSnippetResId);
+        description = context.getString(descriptionResId);
+        this.answers = answers;
     }
 
     public String getCodeSnippet() {
