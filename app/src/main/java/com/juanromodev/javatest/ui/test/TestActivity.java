@@ -2,6 +2,7 @@ package com.juanromodev.javatest.ui.test;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -19,9 +20,11 @@ import com.juanromodev.javatest.ui.grade_report.GradeReportActivity;
 import com.juanromodev.javatest.util.TestUtils;
 
 public class TestActivity extends AppCompatActivity
-        implements QuestionFragment.Callbacks {
+        implements QuestionFragment.Callbacks, SubmitIncompleteTestDialogFragment.Callbacks {
 
     private static final String SAVED_TEST = "test";
+
+    private static final String DIALOG_SUBMIT_INCOMPLETE_TEST = "submit_incomplete_test";
 
     private ViewPager questionVp;
 
@@ -34,7 +37,7 @@ public class TestActivity extends AppCompatActivity
 
         updateActionBarTitle(1);
 
-        questionVp = findViewById(R.id.question_vp);
+        questionVp = findViewById(R.id.questions_vp);
 
         if (savedInstanceState != null) {
             test = savedInstanceState.getParcelable(SAVED_TEST);
@@ -85,8 +88,12 @@ public class TestActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.submit:
-                Intent i = GradeReportActivity.newIntent(this, test);
-                startActivity(i);
+                if (test.isCompleted()) {
+                    navigateToGradeReportScreen();
+                } else {
+                    SubmitIncompleteTestDialogFragment dialogFragment = new SubmitIncompleteTestDialogFragment();
+                    dialogFragment.show(getSupportFragmentManager(), DIALOG_SUBMIT_INCOMPLETE_TEST);
+                }
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -104,8 +111,23 @@ public class TestActivity extends AppCompatActivity
         test.answerQuestion(question, answer);
     }
 
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        navigateToGradeReportScreen();
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+
+    }
+
     private void updateActionBarTitle(int questionNumber) {
         String title = getString(R.string.question_number, questionNumber);
         setTitle(title);
+    }
+
+    private void navigateToGradeReportScreen() {
+        Intent i = GradeReportActivity.newIntent(this, test);
+        startActivity(i);
     }
 }

@@ -9,7 +9,9 @@
 
     <!-- Test -->
     <string name="question_number">Question %1$d</string>
+    <string name="submit_incomplete_test_dialog_message">Submit incomplete test?</string>
     <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Grade Report -->
     <string name="grade_report">Grade Report</string>
