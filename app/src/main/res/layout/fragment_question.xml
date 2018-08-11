@@ -22,7 +22,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_goneMarginTop="8dp"
             tools:text="@string/question_1_code_snippet" />
 
         <TextView
@@ -34,6 +33,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/question_code_snippet_tv"
+            app:layout_goneMarginTop="16dp"
             tools:text="@string/question_1_description" />
 
         <RadioGroup
