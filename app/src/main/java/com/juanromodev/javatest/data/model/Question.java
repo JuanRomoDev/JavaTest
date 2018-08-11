@@ -9,6 +9,7 @@ import java.util.Objects;
 
 public class Question implements Parcelable {
 
+    private int number;
     private String codeSnippet;
     private String description;
     private Answer[] answers;
@@ -17,6 +18,14 @@ public class Question implements Parcelable {
         codeSnippet = context.getString(codeSnippetResId);
         description = context.getString(descriptionResId);
         this.answers = answers;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public String getCodeSnippet() {
@@ -41,14 +50,15 @@ public class Question implements Parcelable {
 
         Question otherQuestion = (Question) obj;
 
-        return codeSnippet.equals(otherQuestion.codeSnippet) &&
+        return number == otherQuestion.number &&
+               codeSnippet.equals(otherQuestion.codeSnippet) &&
                description.equals(otherQuestion.description) &&
                Arrays.equals(answers, otherQuestion.answers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codeSnippet, description, Arrays.hashCode(answers));
+        return Objects.hash(number, codeSnippet, description, Arrays.hashCode(answers));
     }
 
     @Override
@@ -58,6 +68,7 @@ public class Question implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
+        out.writeInt(number);
         out.writeString(codeSnippet);
         out.writeString(description);
         out.writeInt(answers.length);
@@ -76,6 +87,7 @@ public class Question implements Parcelable {
     };
 
     private Question(Parcel in) {
+        number = in.readInt();
         codeSnippet = in.readString();
         description = in.readString();
         int answerCount = in.readInt();
