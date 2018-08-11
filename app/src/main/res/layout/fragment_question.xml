@@ -8,31 +8,22 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp">
 
-        <HorizontalScrollView
-            android:id="@+id/question_code_snippet_hsv"
+        <TextView
+            android:id="@+id/question_code_snippet_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:scrollbarStyle="outsideInset"
+            android:fontFamily="monospace"
             app:layout_constraintBottom_toTopOf="@+id/question_description_tv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/question_code_snippet_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/question_1_code_snippet" />
-        </HorizontalScrollView>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginTop="8dp"
+            tools:text="@string/question_1_code_snippet" />
 
         <TextView
             android:id="@+id/question_description_tv"
@@ -40,9 +31,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintBottom_toTopOf="@+id/question_answers_rg"
-            app:layout_constraintEnd_toEndOf="@+id/question_code_snippet_hsv"
-            app:layout_constraintStart_toStartOf="@+id/question_code_snippet_hsv"
-            app:layout_constraintTop_toBottomOf="@+id/question_code_snippet_hsv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question_code_snippet_tv"
             tools:text="@string/question_1_description" />
 
         <RadioGroup
@@ -52,8 +43,8 @@
             android:layout_marginBottom="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/question_description_tv"
-            app:layout_constraintStart_toStartOf="@id/question_description_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/question_description_tv" />
 
     </android.support.constraint.ConstraintLayout>

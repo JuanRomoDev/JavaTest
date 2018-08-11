@@ -5,6 +5,10 @@ import java.util.Locale;
 public class TextUtils {
 
     public static String addNumberLines(String text) {
+        if (text.isEmpty()) {
+            return text;
+        }
+
         StringBuilder builder = new StringBuilder(text);
 
         int currentIndex = 0;

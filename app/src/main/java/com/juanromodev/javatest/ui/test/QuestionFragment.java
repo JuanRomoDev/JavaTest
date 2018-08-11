@@ -68,7 +68,11 @@ public class QuestionFragment extends Fragment {
 
         questionCodeSnippetTv = v.findViewById(R.id.question_code_snippet_tv);
         String codeSnippet = TextUtils.addNumberLines(question.getCodeSnippet());
-        questionCodeSnippetTv.setText(codeSnippet);
+        if (codeSnippet.isEmpty()) {
+            questionCodeSnippetTv.setVisibility(View.GONE);
+        } else {
+            questionCodeSnippetTv.setText(codeSnippet);
+        }
 
         questionDescriptionTv = v.findViewById(R.id.question_description_tv);
         questionDescriptionTv.setText(question.getDescription());
