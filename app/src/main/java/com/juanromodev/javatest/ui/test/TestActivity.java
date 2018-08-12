@@ -86,7 +86,7 @@ public class TestActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.submit:
-                if (test.isCompleted()) {
+                if (test.isComplete()) {
                     navigateToGradeReport();
                 } else {
                     DialogFragment dialogFragment = new SubmitIncompleteTestDialogFragment();

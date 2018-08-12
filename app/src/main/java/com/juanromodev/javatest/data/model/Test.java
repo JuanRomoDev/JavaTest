@@ -34,7 +34,7 @@ public class Test implements Parcelable {
         return answerToQuestion.values();
     }
 
-    public boolean isCompleted() {
+    public boolean isComplete() {
         for (Question question : questionList) {
             if (!answerToQuestion.containsKey(question)) {
                 return false;

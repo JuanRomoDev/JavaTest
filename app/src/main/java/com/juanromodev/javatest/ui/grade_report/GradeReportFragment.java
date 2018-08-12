@@ -23,7 +23,7 @@ public class GradeReportFragment extends Fragment {
     private TextView correctQuestionsTv;
     private TextView incorrectQuestionsTv;
     private TextView totalQuestionsTv;
-    private TextView gradeTv;
+    private TextView testGradeTv;
 
     public static GradeReportFragment newInstance(Test test) {
         Bundle args = new Bundle();
@@ -47,7 +47,7 @@ public class GradeReportFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_grade_report, container, false);
 
         correctQuestionsTv = v.findViewById(R.id.correct_questions_tv);
-        int correctAnswers = TestUtils.getCorrectAnswersCount(test);
+        int correctAnswers = TestUtils.countCorrectAnswers(test);
         String correctQuestions = getActivity().getString(R.string.correct_questions, correctAnswers);
         correctQuestionsTv.setText(correctQuestions);
 
@@ -60,9 +60,9 @@ public class GradeReportFragment extends Fragment {
         String totalQuestions = getActivity().getString(R.string.total_questions, test.getQuestionCount());
         totalQuestionsTv.setText(totalQuestions);
 
-        gradeTv = v.findViewById(R.id.grade_tv);
-        String grade = getActivity().getString(R.string.grade, TestUtils.gradeTest(test));
-        gradeTv.setText(grade);
+        testGradeTv = v.findViewById(R.id.test_grade_tv);
+        String testGrade = getActivity().getString(R.string.test_grade, TestUtils.gradeTest(test));
+        testGradeTv.setText(testGrade);
 
         return v;
     }

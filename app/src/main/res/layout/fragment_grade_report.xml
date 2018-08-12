@@ -39,14 +39,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/grade_tv"
+        app:layout_constraintBottom_toTopOf="@+id/test_grade_tv"
         app:layout_constraintEnd_toEndOf="@+id/incorrect_questions_tv"
         app:layout_constraintStart_toStartOf="@+id/incorrect_questions_tv"
         app:layout_constraintTop_toBottomOf="@+id/incorrect_questions_tv"
         tools:text="@string/total_questions" />
 
     <TextView
-        android:id="@+id/grade_tv"
+        android:id="@+id/test_grade_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -56,6 +56,6 @@
         app:layout_constraintEnd_toEndOf="@+id/total_questions_tv"
         app:layout_constraintStart_toStartOf="@+id/total_questions_tv"
         app:layout_constraintTop_toBottomOf="@+id/total_questions_tv"
-        tools:text="@string/grade" />
+        tools:text="@string/test_grade" />
 
 </android.support.constraint.ConstraintLayout>

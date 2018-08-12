@@ -29,12 +29,12 @@ public class GradeReportActivity extends AppCompatActivity {
         Test test = getIntent().getParcelableExtra(EXTRA_TEST);
 
         FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+        Fragment fragment = fm.findFragmentById(R.id.grade_report_container);
 
         if (fragment == null) {
             fragment = GradeReportFragment.newInstance(test);
             fm.beginTransaction()
-                    .add(R.id.fragment_container, fragment)
+                    .add(R.id.grade_report_container, fragment)
                     .commit();
         }
     }

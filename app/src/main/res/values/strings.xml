@@ -18,7 +18,7 @@
     <string name="correct_questions">Correct Questions: %1$d</string>
     <string name="incorrect_questions">Incorrect Questions: %1$d</string>
     <string name="total_questions">Total Questions: %1$d</string>
-    <string name="grade">Grade: %1$d</string>
+    <string name="test_grade">Grade: %1$d</string>
 
     <!-- Questions -->
 
