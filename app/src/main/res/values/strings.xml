@@ -24,9 +24,9 @@
 
     <!-- Question 1 -->
     <string name="question_1_code_snippet">
-        int numerator = 5;\n<!--
-     -->int denominator = 0;\n<!--
-     -->int quotient = denominator != 0 ? numerator / denominator : -1;
+        int n = 5;\n<!--
+     -->int d = 0;\n<!--
+     -->int q = d != 0 ? n / d : -1;
     </string>
     <string name="question_1_description">The above statements throw an ArithmeticException.</string>
 
@@ -62,18 +62,16 @@
 
      -->x /= 3;\n\n<!--
 
-     -->x *= 2;\n\n<!--
-
      -->x %= 2;\n\n<!--
 
      -->x -= 4;
     </string>
     <string name="question_3_description">What value is contained in x?</string>
 
-    <string name="question_3_answer_1">x = -1</string>
-    <string name="question_3_answer_2">x = -4</string>
-    <string name="question_3_answer_3">x = -3.33</string>
-    <string name="question_3_answer_4">x = -3</string>
+    <string name="question_3_answer_1">x = -3</string>
+    <string name="question_3_answer_2">x = 1</string>
+    <string name="question_3_answer_3">x = -2.66</string>
+    <string name="question_3_answer_4">x = -2</string>
 
     <!-- Question 4 -->
     <string name="question_4_code_snippet">
@@ -92,19 +90,193 @@
 
     <!-- Question 5 -->
     <string name="question_5_code_snippet">
-        boolean[] array = new boolean[3];\n\n<!--
+        boolean[] arr = new boolean[3];\n\n<!--
 
-     -->array[0] = true;\n\n<!--
+     -->arr[0] = true;\n\n<!--
 
-     -->array[1] = false;\n\n<!--
+     -->arr[1] = false;\n\n<!--
 
-     -->System.out.println(array[2]);
+     -->System.out.print(arr[2]);
     </string>
     <string name="question_5_description">What does the console display when the following statements are ran?</string>
 
     <string name="question_5_answer_1">true</string>
     <string name="question_5_answer_2">false</string>
-    <string name="question_5_answer_3">array[2]</string>
+    <string name="question_5_answer_3">arr[2]</string>
     <string name="question_5_answer_4">null</string>
+
+    <!-- Question 6 -->
+    <string name="question_6_code_snippet"></string>
+    <string name="question_6_description">A class always has a default constructor.</string>
+
+    <string name="question_6_answer_1">True</string>
+    <string name="question_6_answer_2">False</string>
+
+    <!-- Question 7 -->
+    <string name="question_7_code_snippet">
+        String s = \"a\";\n\n<!--
+
+     -->s += \"b\";\n\n<!--
+
+     -->s.concat(\"c\");\n\n<!--
+
+     -->System.out.print(s);
+    </string>
+    <string name="question_7_description">What does the console display when the following statements are ran?</string>
+
+    <string name="question_7_answer_1">a</string>
+    <string name="question_7_answer_2">b</string>
+    <string name="question_7_answer_3">ab</string>
+    <string name="question_7_answer_4">abc</string>
+
+    <!-- Question 8 -->
+    <string name="question_8_code_snippet">
+        byte a = 1;\n<!--
+     -->long b = 2;\n<!--
+     -->_ c = a + b;
+    </string>
+    <string name="question_8_description">What data type does c need to be in order for the following code snippet to compile?</string>
+
+    <string name="question_8_answer_1">byte</string>
+    <string name="question_8_answer_2">short</string>
+    <string name="question_8_answer_3">int</string>
+    <string name="question_8_answer_4">long</string>
+
+    <!-- Question 9 -->
+    <string name="question_9_code_snippet">
+        boolean x = false;\n\n<!--
+
+     -->if(x)\n<!--
+     -->\u0020\u0020System.out.print(\"[x = true]\");\n<!--
+     -->\u0020\u0020if(!x)\n<!--
+     -->\u0020\u0020\u0020\u0020System.out.print(\"[!x = true]\");\n<!--
+     -->else\n<!--
+     -->\u0020\u0020System.out.print(\"[x = false]\");
+    </string>
+    <string name="question_9_description">What does the console display when the following statements are ran?</string>
+
+    <string name="question_9_answer_1">[x = true]</string>
+    <string name="question_9_answer_2">[x = false]</string>
+    <string name="question_9_answer_3">[!x = true]</string>
+    <string name="question_9_answer_4">[!x = true][x = false]</string>
+
+    <!-- Question 10 -->
+    <string name="question_10_code_snippet">
+        boolean x = false;\n\n<!--
+
+     -->if(x)\n<!--
+     -->\u0020\u0020if(!x)\n<!--
+     -->\u0020\u0020\u0020\u0020;\n<!--
+     -->else\n<!--
+     -->\u0020\u0020;
+    </string>
+    <string name="question_10_description">Which if statement is the else statement associated with?</string>
+
+    <string name="question_10_answer_1">if(x)</string>
+    <string name="question_10_answer_2">if(!x)</string>
+    <string name="question_10_answer_3">Both if(x) and if(!x)</string>
+    <string name="question_10_answer_4">Neither if(x) and if(!x)</string>
+
+
+    <!-- Question 11 -->
+    <string name="question_11_code_snippet"></string>
+    <string name="question_11_description">Which of the following is not a Java primitive data type?</string>
+
+    <string name="question_11_answer_1">int</string>
+    <string name="question_11_answer_2">float</string>
+    <string name="question_11_answer_3">double</string>
+    <string name="question_11_answer_4">String</string>
+
+    <!-- Question 12 -->
+    <string name="question_12_code_snippet"></string>
+    <string name="question_12_description">If a variable’s data type is not a primitive then what data type must it be?</string>
+
+    <string name="question_12_answer_1">Array</string>
+    <string name="question_12_answer_2">Number</string>
+    <string name="question_12_answer_3">Object</string>
+    <string name="question_12_answer_4">this</string>
+
+    <!-- Question 13 -->
+    <string name="question_13_code_snippet"></string>
+    <string name="question_13_description">In which of the following answers does the number of bits increase from fewest (on the left) to most (on the right)?</string>
+
+    <string name="question_13_answer_1">byte long short int</string>
+    <string name="question_13_answer_2">int byte short long</string>
+    <string name="question_13_answer_3">byte short int long</string>
+    <string name="question_13_answer_4">short byte long int</string>
+
+    <!-- Question 14 -->
+    <string name="question_14_code_snippet">public int addOne(int x) { return x + 1; }</string>
+    <string name="question_14_description">Which method declaration overloads the method given above?</string>
+
+    <string name="question_14_answer_1">int addOne(int x)</string>
+    <string name="question_14_answer_2">int addOne(int y, int z)</string>
+    <string name="question_14_answer_3">public long addOne(int x)</string>
+    <string name="question_14_answer_4">public int addTwo(int x, int y)</string>
+
+    <!-- Question 15 -->
+    <string name="question_15_code_snippet">
+        public class A {\n<!--
+     -->\u0020\u0020private int a;\n<!--
+     -->\u0020\u0020int b;\n<!--
+     -->\u0020\u0020protected c;\n<!--
+     -->\u0020\u0020public d;\n<!--
+     -->}
+    </string>
+    <string name="question_15_description">Which fields can a class that subclasses A but is in a different package access?</string>
+
+    <string name="question_15_answer_1">a, b, c, d</string>
+    <string name="question_15_answer_2">b, c, d</string>
+    <string name="question_15_answer_3">d</string>
+    <string name="question_15_answer_4">c, d</string>
+
+    <!-- Question 16 -->
+    <string name="question_16_code_snippet"></string>
+    <string name="question_16_description">Which data type does the switch statement not work with?</string>
+
+    <string name="question_16_answer_1">char</string>
+    <string name="question_16_answer_2">int</string>
+    <string name="question_16_answer_3">double</string>
+    <string name="question_16_answer_4">String</string>
+    <string name="question_16_answer_5">enum types</string>
+
+    <!-- Question 17 -->
+    <string name="question_17_code_snippet"></string>
+    <string name="question_17_description">Java is \"pass-by-reference\".</string>
+
+    <string name="question_17_answer_1">True</string>
+    <string name="question_17_answer_2">False</string>
+
+    <!-- Question 18 -->
+    <string name="question_18_code_snippet">
+        String str1 = \"a\";\n<!--
+     -->String str2 = \"a\";\n\n<!--
+
+     -->if(str1 == str2) System.out.print(\"[true]\");\n<!--
+     -->else System.out.print(\"[false]\");\n\n<!--
+
+     -->if(str1.equals(str2)) System.out.print(\"[true]\");\n<!--
+     -->else System.out.print(\"[false]\");
+    </string>
+    <string name="question_18_description">What does the console display when the following statements are ran?</string>
+
+    <string name="question_18_answer_1">[true][true]</string>
+    <string name="question_18_answer_2">[false][true]</string>
+    <string name="question_18_answer_3">[false][false]</string>
+    <string name="question_18_answer_4">[true][false]</string>
+
+    <!-- Question 19 -->
+    <string name="question_19_code_snippet"></string>
+    <string name="question_19_description">A class declared final cannot be subclassed.</string>
+
+    <string name="question_19_answer_1">True</string>
+    <string name="question_19_answer_2">False</string>
+
+    <!-- Question 20 -->
+    <string name="question_20_code_snippet"></string>
+    <string name="question_20_description">A method declared static can access non-static class members.</string>
+
+    <string name="question_20_answer_1">True</string>
+    <string name="question_20_answer_2">False</string>
 
 </resources>

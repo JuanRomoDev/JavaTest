@@ -13,8 +13,8 @@
     <bool name="question_2_answer_4">false</bool>
 
     <!-- Question 3 -->
-    <bool name="question_3_answer_1">false</bool>
-    <bool name="question_3_answer_2">true</bool>
+    <bool name="question_3_answer_1">true</bool>
+    <bool name="question_3_answer_2">false</bool>
     <bool name="question_3_answer_3">false</bool>
     <bool name="question_3_answer_4">false</bool>
 
@@ -29,5 +29,88 @@
     <bool name="question_5_answer_2">true</bool>
     <bool name="question_5_answer_3">false</bool>
     <bool name="question_5_answer_4">false</bool>
+
+    <!-- Question 6 -->
+    <bool name="question_6_answer_1">false</bool>
+    <bool name="question_6_answer_2">true</bool>
+
+    <!-- Question 7 -->
+    <bool name="question_7_answer_1">false</bool>
+    <bool name="question_7_answer_2">false</bool>
+    <bool name="question_7_answer_3">true</bool>
+    <bool name="question_7_answer_4">false</bool>
+
+    <!-- Question 8 -->
+    <bool name="question_8_answer_1">false</bool>
+    <bool name="question_8_answer_2">false</bool>
+    <bool name="question_8_answer_3">false</bool>
+    <bool name="question_8_answer_4">true</bool>
+
+    <!-- Question 9 -->
+    <bool name="question_9_answer_1">false</bool>
+    <bool name="question_9_answer_2">false</bool>
+    <bool name="question_9_answer_3">true</bool>
+    <bool name="question_9_answer_4">false</bool>
+
+    <!-- Question 10 -->
+    <bool name="question_10_answer_1">false</bool>
+    <bool name="question_10_answer_2">true</bool>
+    <bool name="question_10_answer_3">false</bool>
+    <bool name="question_10_answer_4">false</bool>
+
+    <!-- Question 11 -->
+    <bool name="question_11_answer_1">false</bool>
+    <bool name="question_11_answer_2">false</bool>
+    <bool name="question_11_answer_3">false</bool>
+    <bool name="question_11_answer_4">true</bool>
+
+    <!-- Question 12 -->
+    <bool name="question_12_answer_1">false</bool>
+    <bool name="question_12_answer_2">false</bool>
+    <bool name="question_12_answer_3">true</bool>
+    <bool name="question_12_answer_4">false</bool>
+
+    <!-- Question 13 -->
+    <bool name="question_13_answer_1">false</bool>
+    <bool name="question_13_answer_2">false</bool>
+    <bool name="question_13_answer_3">true</bool>
+    <bool name="question_13_answer_4">false</bool>
+
+    <!-- Question 14 -->
+    <bool name="question_14_answer_1">false</bool>
+    <bool name="question_14_answer_2">true</bool>
+    <bool name="question_14_answer_3">false</bool>
+    <bool name="question_14_answer_4">false</bool>
+
+    <!-- Question 15 -->
+    <bool name="question_15_answer_1">false</bool>
+    <bool name="question_15_answer_2">false</bool>
+    <bool name="question_15_answer_3">false</bool>
+    <bool name="question_15_answer_4">true</bool>
+
+    <!-- Question 16 -->
+    <bool name="question_16_answer_1">false</bool>
+    <bool name="question_16_answer_2">false</bool>
+    <bool name="question_16_answer_3">true</bool>
+    <bool name="question_16_answer_4">false</bool>
+    <bool name="question_16_answer_5">false</bool>
+
+    <!-- Question 17 -->
+    <bool name="question_17_answer_1">false</bool>
+    <bool name="question_17_answer_2">true</bool>
+
+    <!-- Question 18 -->
+    <bool name="question_18_answer_1">true</bool>
+    <bool name="question_18_answer_2">false</bool>
+    <bool name="question_18_answer_3">false</bool>
+    <bool name="question_18_answer_4">false</bool>
+
+    <!-- Question 19 -->
+    <bool name="question_19_answer_1">true</bool>
+    <bool name="question_19_answer_2">false</bool>
+
+    <!-- Question 20 -->
+    <bool name="question_20_answer_1">false</bool>
+    <bool name="question_20_answer_2">true</bool>
 
 </resources>
