@@ -12,6 +12,9 @@
     <string name="submit_incomplete_test_dialog_message">Submit incomplete test?</string>
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
+    <string name="exit_exam_dialog_title">Exit exam?</string>
+    <string name="exit_exam_dialog_message">All progress will be lost.</string>
+    <string name="exit">Exit</string>
 
     <!-- Grade Report -->
     <string name="grade_report">Grade Report</string>

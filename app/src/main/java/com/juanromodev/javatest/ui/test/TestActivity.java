@@ -19,11 +19,13 @@ import com.juanromodev.javatest.ui.grade_report.GradeReportActivity;
 import com.juanromodev.javatest.util.TestUtils;
 
 public class TestActivity extends AppCompatActivity
-        implements QuestionFragment.Callbacks, SubmitIncompleteTestDialogFragment.Callbacks {
+        implements QuestionFragment.Callbacks, SubmitIncompleteTestDialogFragment.Callbacks,
+        ExitTestDialogFragment.Callbacks {
 
     private static final String SAVED_TEST = "test";
 
     private static final String DIALOG_SUBMIT_INCOMPLETE_TEST = "submit_incomplete_test";
+    private static final String DIALOG_EXIT_TEST = "exit_test";
 
     private ViewPager questionVp;
 
@@ -106,6 +108,12 @@ public class TestActivity extends AppCompatActivity
     }
 
     @Override
+    public void onBackPressed() {
+        DialogFragment dialogFragment = new ExitTestDialogFragment();
+        dialogFragment.show(getSupportFragmentManager(), DIALOG_EXIT_TEST);
+    }
+
+    @Override
     public void onQuestionAnswered(Question question, Answer answer) {
         test.answerQuestion(question, answer);
     }
@@ -116,6 +124,8 @@ public class TestActivity extends AppCompatActivity
             case DIALOG_SUBMIT_INCOMPLETE_TEST:
                 navigateToGradeReport();
                 break;
+            case DIALOG_EXIT_TEST:
+                finish();
 
             default:
         }
