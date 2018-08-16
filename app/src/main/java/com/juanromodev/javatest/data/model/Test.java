@@ -22,6 +22,10 @@ public class Test implements Parcelable {
         return questionList.get(questionIndex);
     }
 
+    public List<Question> getQuestionList() {
+        return questionList;
+    }
+
     public int getQuestionCount() {
         return questionList.size();
     }

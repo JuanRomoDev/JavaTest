@@ -20,12 +20,13 @@ import com.juanromodev.javatest.util.TestUtils;
 
 public class TestActivity extends AppCompatActivity
         implements QuestionFragment.Callbacks, SubmitIncompleteTestDialogFragment.Callbacks,
-        ExitTestDialogFragment.Callbacks {
+        ExitTestDialogFragment.Callbacks, TestOverviewDialogFragment.Callbacks {
 
     private static final String SAVED_TEST = "test";
 
     private static final String DIALOG_SUBMIT_INCOMPLETE_TEST = "submit_incomplete_test";
     private static final String DIALOG_EXIT_TEST = "exit_test";
+    private static final String DIALOG_TEST_OVERVIEW = "test_overview";
 
     private ViewPager questionVp;
 
@@ -96,6 +97,12 @@ public class TestActivity extends AppCompatActivity
                 }
                 return true;
 
+            case R.id.overview:
+                DialogFragment dialogFragment =
+                        TestOverviewDialogFragment.newInstance(test, test.getQuestionList().get(questionVp.getCurrentItem()));
+                dialogFragment.show(getSupportFragmentManager(), DIALOG_TEST_OVERVIEW);
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -134,6 +141,12 @@ public class TestActivity extends AppCompatActivity
     @Override
     public void onDialogNegativeClick(DialogFragment dialog) {
 
+    }
+
+    @Override
+    public void onQuestionSelected(Question question) {
+        int questionIndex = test.getQuestionList().indexOf(question);
+        questionVp.setCurrentItem(questionIndex);
     }
 
     private void setActionBarTitle(int questionNumber) {
